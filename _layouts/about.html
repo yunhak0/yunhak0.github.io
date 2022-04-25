@@ -37,10 +37,18 @@ layout: default
           <!-- News -->
           {%- include news.html %}
           {%- endif %}
-          {% if page.selected_papers -%}
+
+          {% if page.sections %}
+          <!-- sections -->
+            <br>
+            {% include sections.html %}
+          {% endif %}
+
+          <!-- {% if page.selected_papers -%} -->
             <!-- Selected papers -->
-            {%- include selected_papers.html %}
-          {%- endif %}
+            <!-- {%- include selected_papers.html %} -->
+          <!-- {%- endif %} -->
+
           {%- if page.social %}
           <!-- Social -->
           <div class="social">

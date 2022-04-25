@@ -4,6 +4,33 @@
 
 // Typography
 
+dt {
+  font-weight: 500;
+  font-family: Helvetica;
+  margin-top: 15px;
+}
+
+dd {
+  padding-left: 20px;
+  margin: 3px 0;
+}
+
+ds {
+  margin: 3px 0;
+}
+
+dm {
+  padding-left: 30px;
+  margin: 3px 0;
+  color: var(--global-theme-color);
+}
+
+dc {
+  padding-left: 5px;
+  margin: 3px 0;
+  color: var(--global-theme-color);
+}
+
 p, h1, h2, h3, h4, h5, h6, em, div, li, span, strong {
   color: var(--global-text-color);
 }
