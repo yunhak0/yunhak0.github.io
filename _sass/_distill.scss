@@ -107,6 +107,12 @@ d-appendix {
   }
 }
 
+d-comment {
+  margin-left: 100px;
+  margin-right: 100px;
+  display: grid;
+}
+
 @media (max-width: 1024px) {
   d-article {
     d-contents {
