@@ -75,7 +75,7 @@ contact_note: >
   Please send am e-mail or message via Linkedin.
 
 google_analytics: G-6KWPNF767R # your google-analytics ID (format: UA-XXXXXXXXX)
-google_site_verification:  # your google-site-verification ID (Google Search Console)
+google_site_verification: DQx5rD425ba6IhnTyc6Ut4J498mvZkIZLTdcgl1N6F8 # your google-site-verification ID (Google Search Console)
 bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 panelbear_analytics:  # panelbear analytics site ID (format: XXXXXXXXX)
 
@@ -272,7 +272,7 @@ jekyll-diagrams:
 
 enable_google_analytics:    true  # enables google analytics
 enable_panelbear_analytics: false  # enables panelbear analytics
-enable_google_verification: false  # enables google site verification
+enable_google_verification: true  # enables google site verification
 enable_bing_verification:   false  # enables bing site verification
 enable_masonry:             true   # enables automatic project cards arangement
 enable_math:                true   # enables math typesetting (uses MathJax)
