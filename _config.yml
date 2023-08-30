@@ -59,7 +59,7 @@ gitlab_username: # your GitLab user name
 twitter_username: # your Twitter handle
 linkedin_username: younhak-oh # your LinkedIn user name
 scholar_userid: SYoXjKMAAAAJ # your Google Scholar ID
-orcid_id: # your ORCID ID
+orcid_id: 0000-0002-9110-3042 # your ORCID ID
 medium_username: # your Medium username
 quora_username: # your Quora username
 publons_id: # your ID on Publons
@@ -83,9 +83,9 @@ panelbear_analytics:  # panelbear analytics site ID (format: XXXXXXXXX)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Yunhak's Blog  # your blog must have a name for it to show up in the nav bar
-blog_description: My thoughts & Insights
-permalink: /blog/:year/:title/
+# blog_name: Yunhak's Blog  # your blog must have a name for it to show up in the nav bar
+# blog_description: My thoughts & Insights
+# permalink: /blog/:year/:title/
 
 # Pagination
 pagination:

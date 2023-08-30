@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: M.S. student in Machine Learning
+subtitle: Ph.D. student in Machine Learning
 
 profile:
   align: right
@@ -18,16 +18,13 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Hi I'm Yunhak Oh! 👋
-
-I'm a current master's degree candidate for Industrial & System Engineering at Korea Advanced Institute of Science and Technology (KAIST),
+Hello! 👋 I'm a Ph.D. student in Graduate School of Data Science at KAIST,
 where I am fortunate to be advised by [Prof. Chanyoung Park](http://dsail.kaist.ac.kr/professor/).
 
 I'm actively on research with my best colleagues at [Data Science and Artificial Intelligence Lab](http://dsail.kaist.ac.kr/).
 
 My research interest is mainly on anything connected to or can be represented as graphs!
 
-- Graph Neural Networks (GNNs)
-- Continual Learning
-- Neural ODEs
+- Recommendation
+- Graph Neural Networks (GNNs) for Chemistry and Biology
 - General Machine Learning and Data Mining

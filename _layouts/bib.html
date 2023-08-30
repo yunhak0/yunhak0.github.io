@@ -23,7 +23,7 @@
           <div class="author">
           {%- for author in entry.author_array -%}
             {%- assign author_is_self = false -%}
-            {%- if author.last == site.scholar.last_name%}
+            {%- if site.scholar.first_name contains author.first%}
               {%- if site.scholar.first_name contains author.first -%}
                 {%- assign author_is_self = true -%}
               {%- endif -%}
@@ -102,7 +102,7 @@
             <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
           {%- endif %}
           {%- if entry.html %}
-            <a href="{{ entry.html }}" class="btn btn-sm z-depth-0" role="button">HTML</a>
+            <a href="{{ entry.html }}" class="btn btn-sm z-depth-0" role="button">PDF</a>
           {%- endif %}
           {%- if entry.pdf %}
             {% if entry.pdf contains '://' -%}
