@@ -25,6 +25,6 @@ I'm actively on research with my best colleagues at [Data Science and Artificial
 
 My research interest is mainly on anything connected to or can be represented as graphs!
 
-- Recommendation
+- Recommender System
 - Graph Neural Networks (GNNs) for Chemistry and Biology
 - General Machine Learning and Data Mining
