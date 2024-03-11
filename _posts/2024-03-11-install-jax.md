@@ -1,7 +1,7 @@
 ---
-layout: distill
+layout: post
 title: Install JAX
-date: 2024-03-12
+date: 2024-03-11
 description: Simply install JAX using Conda
 tags: jax
 categories: setting
