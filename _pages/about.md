@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Ph.D. student in Machine Learning
+subtitle: Ph.D. student in Data Science
 
 profile:
   align: right

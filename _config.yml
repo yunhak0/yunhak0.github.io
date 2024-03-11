@@ -56,8 +56,8 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 
 github_username: yunhak0 # your GitHub user name
 gitlab_username: # your GitLab user name
-twitter_username: # your Twitter handle
-linkedin_username: younhak-oh # your LinkedIn user name
+twitter_username: yunhak_oh # your Twitter handle
+linkedin_username: yunhak-oh # your LinkedIn user name
 scholar_userid: SYoXjKMAAAAJ # your Google Scholar ID
 orcid_id: 0000-0002-9110-3042 # your ORCID ID
 medium_username: # your Medium username
@@ -83,13 +83,13 @@ panelbear_analytics:  # panelbear analytics site ID (format: XXXXXXXXX)
 # Blog
 # -----------------------------------------------------------------------------
 
-# blog_name: Yunhak's Blog  # your blog must have a name for it to show up in the nav bar
-# blog_description: My thoughts & Insights
-# permalink: /blog/:year/:title/
+blog_name: Chaotic ArXiv  # your blog must have a name for it to show up in the nav bar
+blog_description: Notes of Trial and Error
+permalink: /blog/:year/:title/
 
 # Pagination
 pagination:
-  enabled: true
+  enabled: true #false
 
 # Comments
 disqus_shortname: yunhak0-github-io # put your disqus shortname
