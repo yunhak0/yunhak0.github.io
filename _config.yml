@@ -84,6 +84,7 @@ panelbear_analytics:  # panelbear analytics site ID (format: XXXXXXXXX)
 # -----------------------------------------------------------------------------
 
 blog_name: Chaotic ArXiv  # your blog must have a name for it to show up in the nav bar
+blog_nav_title: blog # your blog must have a title for it to be displayed in the nav bar
 blog_description: Notes of Trial and Error
 permalink: /blog/:year/:title/
 
