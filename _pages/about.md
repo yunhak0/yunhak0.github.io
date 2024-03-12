@@ -23,8 +23,8 @@ where I am fortunate to be advised by [Prof. Chanyoung Park](http://dsail.kaist.
 
 I'm actively on research with my best colleagues at [Data Science and Artificial Intelligence Lab](http://dsail.kaist.ac.kr/).
 
-My research interest is mainly on anything connected to or can be represented as graphs!
+My research topics of interest include, but are not limited to, the following:
 
 - Recommender System
-- Graph Neural Networks (GNNs) for Chemistry and Biology
-- General Machine Learning and Data Mining
+- Graph Representation Learning
+- AI4Science - Biology
