@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Install JAX
+title: Conda를 이용한 간단한 GPU버전 JAX 설치법 
 date: 2024-03-11
-description: Simply install JAX using Conda
+description: CUDA, cuDNN 버전으로 인한 까다로운 JAX 설치기
 tags: jax
 categories: setting
 ---
@@ -19,9 +19,11 @@ Conda 환경 생성 후, 공식 홈페이지의 [Installation Guideline](https:/
   conda activate af
 {% endhighlight %}
 
+### [시도 1]
+<br>
 하지만, CUDA 버전 (v11.1)이 너무 낮아, GPU를 인식하지 못하는 문제가 발생하였다.
 <details>
-  <summary>Trial 1</summary>
+  <summary>자세히</summary>
     CUDA version이 다음과 같이 다르게 나타났지만(<a href="https://stackoverflow.com/questions/53422407/different-cuda-versions-shown-by-nvcc-and-nvidia-smi">차이가 나는 이유</a>), 11.x라 공식 Guideline인 <a href="https://jax.readthedocs.io/en/latest/installation.html#nvidia-gpu">Installing JAX</a>에서 'CUDA 11 installation' 코드로 설치 시도함.
   {% highlight bash linenos %}
   nvidia-smi{% endhighlight %}
@@ -47,15 +49,16 @@ Conda 환경 생성 후, 공식 홈페이지의 [Installation Guideline](https:/
 
 Log 메세지를 통해 CUDA version이 너무 낮음을 알 수 있었다.<br>
 
-<div style="color:red;">CUDA backend failed to initialize: Found cuBLAS version 11201, but JAX was built against version 111103, which is newer. The copy of cuBLAS that is installed must be at least as new as the version against which JAX built. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)<br>
-cpu</div>
-
     <!-- <img width="500" src='{{"/assets/img/blog1_install_jax/jax_check.png" | relative_url}}'>
 
     <br> -->
 
 </details>
+<div style="color:red;">CUDA backend failed to initialize: Found cuBLAS version 11201, but JAX was built against version 111103, which is newer. The copy of cuBLAS that is installed must be at least as new as the version against which JAX built. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)<br>
+cpu</div>
+<br>
 
+### [시도 2]
 <br>
 CUDA 버전을 업데이트 하기 위해 [공식 문서](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html)를 참고하여,
 
@@ -64,7 +67,7 @@ CUDA 버전을 업데이트 하기 위해 [공식 문서](https://docs.nvidia.co
 
 확인 후 [CUDA toolkit](https://developer.nvidia.com/cuda-downloads) v12.4와 [cuDNN](https://developer.nvidia.com/rdp/cudnn-archive) v8.9.7 for CUDA 12.x 를 설치하였으나, 어떤 이유에서 인지... 이번에도 GPU를 인식하지 못하는 문제가 발생하였다.
 <details>
-  <summary>Trial 2</summary>
+  <summary>자세히</summary>
     <img width="800" src='{{"/assets/img/blog1_install_jax/env_setup.png" | relative_url}}'>
 
     <br>
@@ -77,26 +80,26 @@ CUDA 버전을 업데이트 하기 위해 [공식 문서](https://docs.nvidia.co
   # after save
   source ~/.bash_profile
 {% endhighlight %}
-
-    (아마도 CUDA 12.3을 설치하면 되지 않았을까...)
 </details>
 
 <br>
 
-그리고 ```conda```를 활용해 설치하는 [방법](https://jax.readthedocs.io/en/latest/installation.html#conda)을 시도했지만, 두 번째 명령어가 어째서인지 먹히지 않았다.
+### [시도 3]
+<br>
+그리고 ```conda```를 활용해 설치하는 [방법](https://jax.readthedocs.io/en/latest/installation.html#conda)을 시도했지만, 어째서인지 명령어가 먹히지 않았다.
 
 <details>
-  <summary>Trial 3</summary>
+  <summary>자세히</summary>
 {% highlight bash linenos %}
   conda install jax -c conda-forge
   conda install jaxlib=*=*cuda* jax cuda-nvcc -c conda-forge -c nvidia
 {% endhighlight %}
-
-<div style="color:red;">no matches found: jaxlib=*=*cuda*</div>
     <!-- <img width="500" src='{{"/assets/img/blog1_install_jax/conda_jaxlib_trial.png" | relative_url}}'> -->
 </details>
-
+<div style="color:red;">no matches found: jaxlib=*=*cuda*</div>
 <br>
+
+## 설치 성공한 방법
 
 마지막으로 아래와 같이 시도해서 성공했다.
 
@@ -127,7 +130,7 @@ conda activate af
   conda install jax==0.4.23 -c conda-forge
 {% endhighlight %}
 
-이 때 설치되는 jaxlib은 cpu 버전인 것으로 보여 아래와 같이 jaxlib만 pip를 사용해 설치해주었다.
+gpu 버전인 jaxlib 설치를 위해 jaxlib만 pip를 사용해 설치해주었다.
 
 {% highlight bash linenos %}
   # install jaxlib for gpu using conda
