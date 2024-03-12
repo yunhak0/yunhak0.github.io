@@ -5,14 +5,14 @@ date: 2024-03-11
 description: CUDA, cuDNN 버전 때문에 골치 아팠던 JAX 설치기
 tags: jax
 categories: setting
+comments: true
 ---
 
 *이 포스트는 2024년 3월 12일을 기준으로 작성되었습니다.*
 
 Antibody design을 위해 JAX를 설치해야 하는 상황에 생겼다. (pytorch, tensorflow 정도로 끝날 줄 알았는데...)
 
-Conda 환경 생성 후, 공식 홈페이지의 [Installation Guideline](https://jax.readthedocs.io/en/latest/installation.html#nvidia-gpu) 대로 설치를 했다.
-
+공식 홈페이지의 [Installation Guideline](https://jax.readthedocs.io/en/latest/installation.html#nvidia-gpu) 대로 설치를 시도했다. (먼저 ```conda``` 환경 만들기!)
 {% highlight bash linenos %}
   # Create Conda Environment (python 3.9)
   conda create -n af python=3.9
