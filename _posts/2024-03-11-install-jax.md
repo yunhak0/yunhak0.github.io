@@ -2,7 +2,7 @@
 layout: post
 title: Conda를 이용한 간단한 GPU버전 JAX 설치법 
 date: 2024-03-11
-description: CUDA, cuDNN 버전으로 인한 까다로운 JAX 설치기
+description: CUDA, cuDNN 버전 때문에 골치 아팠던 JAX 설치기
 tags: jax
 categories: setting
 ---
