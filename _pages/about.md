@@ -27,4 +27,4 @@ My research topics of interest include, but are not limited to, the following:
 
 - Recommender System
 - Graph Representation Learning
-- AI4Science - Biology
+- AI4Science - Cell Biology
