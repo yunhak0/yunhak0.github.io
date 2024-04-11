@@ -6,7 +6,7 @@ subtitle: Ph.D. student in Data Science
 
 profile:
   align: right
-  image: yunhak.jpg
+  image: yunhak1.jpg
   # address: >
   #   <p>555 your office number</p>
   #   <p>123 your address street</p>
