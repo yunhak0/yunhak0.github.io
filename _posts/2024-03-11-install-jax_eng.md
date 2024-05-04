@@ -12,8 +12,6 @@ comments: true
 
 For Antibody design model, I needed to install JAX.
 
-I tried the installation based on the official guideline
-
 I tried installing it according to the [official guideline](https://jax.readthedocs.io/en/latest/installation.html#nvidia-gpu). (First, created ```conda``` environment)
 {% highlight bash linenos %}
   # Create Conda Environment (python 3.9)
