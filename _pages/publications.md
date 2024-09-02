@@ -8,7 +8,7 @@ description: Full publications on <a href=https://scholar.google.com/citations?u
 #     text: "Conferences"
 #   - bibquery: "@article"
 #     text: "Journals"
-years: [2023, 2022, 2016, 2014]
+years: [2024, 2023, 2022, 2016, 2014]
 nav: true
 ---
 <!-- _pages/publications.md -->
