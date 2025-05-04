@@ -25,6 +25,6 @@ I'm actively on research with my best colleagues at [Data Science and Artificial
 
 My research topics of interest include, but are not limited to, the following:
 
-- Recommender System
-- Graph Representation Learning
 - AI4Science - Cell Biology
+- Graph Representation Learning
+- Recommender System
