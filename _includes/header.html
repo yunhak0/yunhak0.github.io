@@ -39,7 +39,7 @@
                 <a class="nav-link" href="/assets/pdf/CV_YunhakOh.pdf">CV</a>
               </li>
 
-              {% if site.blog_name %}
+              {% if site.blog_name and site.show_blog_nav %}
               <!-- Blog -->
               <li class="nav-item {% if page.url contains 'blog' %}active{% endif %}">
                 <a class="nav-link" href="{{ '/blog/' | relative_url }}">Blog
