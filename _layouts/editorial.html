@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% unless page.editorial_tab == 'about' %}{{ page.title }} — {% endunless %}Yunhak Oh</title>
+  <meta name="description" content="Yunhak Oh — Ph.D. candidate in Data Science at KAIST. Machine learning, graph representation learning, and AI for science.">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="icon" href="{{ '/assets/img/scientist.ico' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/editorial.css' | relative_url }}">
+  {% if page.editorial_tab == 'cv' %}<link rel="stylesheet" href="{{ '/assets/css/editorial-pdf.css' | relative_url }}">{% endif %}
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="publication">
+    <header class="masthead">
+      <div class="nameplate">
+        <a href="{{ '/' | relative_url }}" aria-label="Yunhak Oh, home">Yunhak Oh<span class="name-period">.</span></a>
+        <p class="masthead-tagline"><span>Learning from cells.<br>Understanding human health.</span></p>
+      </div>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="{{ '/' | relative_url }}" {% if page.editorial_tab == 'about' %}aria-current="page"{% endif %}><span class="nav-label"><span class="nav-number">01</span> About</span></a>
+        <a href="{{ '/cv/' | relative_url }}" {% if page.editorial_tab == 'cv' %}aria-current="page"{% endif %}><span class="nav-label"><span class="nav-number">02</span> CV</span></a>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1">{{ content }}</main>
+    <footer class="site-footer"><span><span class="footer-copyright">© Copyright {{ site.data.editorial.last_updated | date: '%Y' }} Yunhak Oh.</span> <span class="footer-updated">Last updated: {{ site.data.editorial.last_updated | date: '%B %-d, %Y' }}.</span></span><a href="#top" aria-label="Back to top">Back to top ↑</a></footer>
+  </div>
+</body>
+</html>

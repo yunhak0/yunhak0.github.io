@@ -1,12 +1,13 @@
 ---
-layout: about
+layout: editorial-about
+editorial_tab: about
 title: about
 permalink: /
 subtitle: Ph.D. candidate in Data Science
 
 profile:
   align: right
-  image: yunhak1.jpg
+  image: yunhak1-cropped.jpg
   # address: >
   #   <p>555 your office number</p>
   #   <p>123 your address street</p>
@@ -18,21 +19,16 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-<!-- Hello! 👋 I'm a Ph.D. student in Graduate School of Data Science at KAIST,
-where I am fortunate to be advised by [Prof. Chanyoung Park](http://dsail.kaist.ac.kr/professor/).
+I’m Yunhak (pronounced “Yoon-hahk”), a Ph.D. candidate in the [Graduate School of Data Science (GSDS)](https://gsds.kaist.ac.kr/eng) at [KAIST](https://www.kaist.ac.kr/en/), advised by [Prof. Chanyoung Park](http://dsail.kaist.ac.kr/professor/). My research explores how machine learning can **connect cellular measurements to an understanding of disease and the differences between patients**.
 
-I'm actively on research with my best colleagues at [Data Science and Artificial Intelligence Lab](http://dsail.kaist.ac.kr/). -->
+My current work focuses on learning representations of cellular states and responses from transcriptomic data, with an emphasis on capturing biologically meaningful variation. I am increasingly interested in how these representations capture disease-related changes and help us understand differences across individuals. My long-term goal is to connect this understanding with therapeutic discovery and design, with a particular interest in RNA therapeutics.
 
+My research began with graph and representation learning to model complex relationships and contexts. Through spatial transcriptomics, I began exploring the biological organization of cells and tissues, later broadening my work to transcriptomics and cellular modeling. Before graduate school, I studied industrial engineering and worked as a Data Scientist and Manager at NielsenIQ. That experience in solving practical problems continues to shape how I connect methodological advances with useful knowledge and real-world value.
 
-I'm passionate about using machine learning to solve complex scientific puzzles, bridging the gap between cutting-edge research and real-world impact.
+Ultimately, my research is motivated by the people living with disease and those who support them. I hope to deepen our understanding of biology and disease, and contribute knowledge and tools that can make a meaningful difference in our lives.
 
-This passion was forged during my time at NielsenIQ, where I grew from a Data Scientist to a Manager. There, I learned firsthand how to build practical, data-driven solutions, leading projects that enhanced operational efficiency and delivered significant business value, including one that cut costs by $54K USD. 
+## Research interests
 
-To tackle even deeper challenges, I am now a Ph.D. candidate in the **Graduate School of Data Science at KAIST**, advised by [Prof. Chanyoung Park](http://dsail.kaist.ac.kr/professor/). My research focuses on the intersection of Graph Representation Learning and its applications to biology, and I've been fortunate to publish my work in top-tier conferences like NeurIPS and ICML. 
-
-My goal is to continue creating practical value by applying advanced ML to meaningful scientific problems.
-
-My Core Research Interests:
-* AI4Science - Biology 
-* Graph Representation Learning 
-* Recommender System 
+- Cellular Representation Learning & Transcriptomics
+- Disease Modeling & Patient Heterogeneity
+- Therapeutic Discovery & RNA Therapeutics

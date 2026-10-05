@@ -1,0 +1,5 @@
+<div class="archive-tools" data-archive-tools hidden>
+  <div class="year-filters" role="group" aria-label="Filter by year"><button type="button" data-year="all" aria-pressed="true">All</button>{% for year in include.years %}<button type="button" data-year="{{ year }}" aria-pressed="false">{{ year }}</button>{% endfor %}</div>
+  <label class="search-label">Find <input type="search" placeholder="Title, author, venue…" aria-label="Search publications"></label>
+</div>
+<p class="archive-count" data-result-count role="status" hidden></p>

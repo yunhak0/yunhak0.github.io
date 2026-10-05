@@ -19,6 +19,7 @@ use_custom_favicon: true # if this is true, you can set favicon path instead of 
 icon: scientist.ico # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://yunhak0.github.io # the base hostname & protocol for your site
+repository: yunhak0/yunhak0.github.io
 baseurl: # the subpath of your site, e.g. /blog/
 last_updated: false # set to true if you want to display last updated in the footer
 impressum_path:  # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
@@ -84,7 +85,7 @@ panelbear_analytics:  # panelbear analytics site ID (format: XXXXXXXXX)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Chaotic ArXiv  # your blog must have a name for it to show up in the nav bar
+blog_name: # your blog must have a name for it to show up in the nav bar
 show_blog_nav: false # set to true to show the Blog tab in the nav bar
 blog_nav_title: blog # your blog must have a title for it to be displayed in the nav bar
 blog_description: Notes of Trial and Error
@@ -323,3 +324,6 @@ popper:
 medium_zoom:
   version: "1.0.6"
   integrity: "sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM="
+
+# PDF used by the editorial CV reader.
+editorial_cv: /assets/pdf/CV_YunhakOh_261005.pdf

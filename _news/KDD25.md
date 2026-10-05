@@ -5,3 +5,5 @@ inline: true
 ---
 
 A paper got accepted at <a href='https://kdd2025.kdd.org/'>KDD 2025</a>.
+
+- Oldie but Goodie: Re-illuminating Label Propagation on Graphs with Partially Observed Features

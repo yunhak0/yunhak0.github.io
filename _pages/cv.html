@@ -1,0 +1,17 @@
+---
+layout: editorial
+title: Curriculum vitae
+permalink: /cv/
+editorial_tab: cv
+---
+<header class="page-heading"><h1><span class="title-highlight">Curriculum vitae</span></h1><p>Education, research, and professional experience.</p></header>
+<div class="pdf-reader" id="cv-document" data-pdf-url="{{ site.editorial_cv | relative_url }}">
+  <div class="pdf-controls" aria-label="PDF controls">
+    <div><button class="reader-button" type="button" id="pdf-prev" aria-label="Previous page" disabled>←</button><span id="pdf-page-number" aria-live="polite">— / —</span><button class="reader-button" type="button" id="pdf-next" aria-label="Next page" disabled>→</button></div>
+    <div><button class="reader-button" type="button" id="pdf-zoom-out" aria-label="Zoom out" disabled>−</button><span id="pdf-zoom-label">Fit</span><button class="reader-button" type="button" id="pdf-zoom-in" aria-label="Zoom in" disabled>+</button><button class="reader-button" type="button" id="pdf-fit" disabled>Fit width</button><a class="reader-button" href="{{ site.editorial_cv | relative_url }}" download>Download ↓</a></div>
+  </div>
+  <p id="pdf-status" class="pdf-status" role="status">Loading curriculum vitae…</p>
+  <div class="pdf-pages" id="pdf-pages" tabindex="0" aria-label="Curriculum vitae document"></div>
+  <noscript><p class="pdf-status">Enable JavaScript to preview the document, or download the PDF above.</p></noscript>
+</div>
+<script type="module" src="{{ '/assets/js/cv-reader.js' | relative_url }}"></script>

@@ -1,0 +1,37 @@
+---
+layout: editorial
+---
+<div class="about-grid">
+  <article class="about-column">
+    {% assign intro_paragraph = content | split: '</p>' | first | append: '</p>' %}
+    {% assign current_research = content | remove_first: intro_paragraph | split: '</p>' | first | append: '</p>' %}
+    <div class="about-intro">
+      <figure class="portrait"><img src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}" alt="Portrait of Yunhak Oh" width="184" height="230"></figure>
+      <div class="about-intro-copy">
+        <div class="about-prose intro-paragraph">{{ intro_paragraph }}{{ current_research }}</div>
+      </div>
+    </div>
+    <div class="about-prose">
+      {{ content | remove_first: intro_paragraph | remove_first: current_research }}
+    </div>
+    <div class="contact-block" id="contact">
+      <div><span class="section-label">Let's connect</span>{% include editorial-contact.html %}</div>
+    </div>
+  </article>
+  <aside class="bulletin-column" id="news" aria-labelledby="news-heading" data-home-news>
+    <div class="section-heading"><h2 class="section-label" id="news-heading">News</h2></div>
+    <div class="news-scroll" id="news-list" role="region" aria-labelledby="news-heading" tabindex="0">
+      {% include editorial-news.html compact=true %}
+    </div>
+    <button class="news-older" type="button" aria-controls="news-list" hidden>↓ Older news</button>
+    <button class="news-more" type="button" aria-controls="news-list" aria-expanded="false" hidden>Show more news +</button>
+  </aside>
+</div>
+<section class="selected-section" id="publications" aria-labelledby="selected-title" data-publication-archive data-expanding-publications data-selected-keys="oh2026sctrilemma,lee2026screening,piao2026learning,spotscape">
+  <div class="section-heading"><h2 id="selected-title"><span class="title-highlight" data-publications-title aria-live="polite">Full publications</span></h2><div class="publication-heading-actions"><button class="text-link" type="button" data-full-archive-link aria-controls="publication-list" aria-expanded="false">Full archive ↓</button><button class="text-link" type="button" data-collapse-publications aria-controls="publication-list" hidden>Selected only ↑</button></div></div>
+  {% include editorial-publication-tools.html %}
+  <div id="publication-list">{% bibliography -f papers -T editorial-bib %}</div>
+  <p class="empty-results" data-empty-results hidden>No publications match. Try another search or year.</p>
+  <div class="publication-reveal" data-publications-end hidden><button class="publication-reveal-button" type="button" data-expand-publications aria-controls="publication-list" aria-expanded="false" aria-label="Show all publications"><span>Scroll down for all publications</span><span class="publication-reveal-arrow" aria-hidden="true">↓</span></button></div>
+</section>
+<script src="{{ '/assets/js/editorial.js' | relative_url }}" defer></script>

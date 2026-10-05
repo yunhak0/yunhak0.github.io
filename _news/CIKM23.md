@@ -6,3 +6,4 @@ inline: true
 
 A paper got accepted at CIKM 2023.
 
+- MUSE: Music Recommender System with Shuffle Play Recommendation Enhancement

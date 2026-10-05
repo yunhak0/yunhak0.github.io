@@ -1,0 +1,38 @@
+{% assign dispatches = site.news | sort: 'date' | reverse %}
+<div class="dispatches{% if include.compact %} dispatches-compact{% endif %}">
+{% for item in dispatches limit:include.limit %}
+  {% assign datestamp = item.date | date: '%Y-%m-%d' %}
+  <article class="dispatch" id="news-{{ datestamp }}">
+    <div class="dateline"><time datetime="{{ item.date | date: '%Y-%m' }}">{{ item.date | date: '%b %Y' }}</time>{% if datestamp == '2026-09-25' or datestamp == '2026-08-17' %}<span class="new-label"><span aria-hidden="true">●</span> New</span>{% endif %}</div>
+    <div class="dispatch-body">
+      {% if include.compact %}
+        {% assign full_text = item.content | strip %}
+        {% assign lead = full_text | split: '</p>' | first | append: '</p>' %}
+        {% assign extra = full_text | remove_first: lead | strip %}
+        {% if item.news_summary %}{{ item.news_summary | markdownify }}{% else %}{{ lead }}{% endif %}
+        {% if extra != empty %}
+          <details class="dispatch-details">
+            <summary aria-label="News details for {{ item.date | date: '%b %Y' }}">Details <span class="details-symbol" aria-hidden="true"></span></summary>
+            <div class="dispatch-extra">{{ extra }}</div>
+          </details>
+        {% endif %}
+      {% else %}
+        {{ item.content }}
+      {% endif %}
+      {% assign news_key = item.path | split: '/' | last | remove: '.md' %}
+      {% assign resources = site.data.editorial_news_resources[news_key] %}
+      {% if resources %}
+        <div class="news-resources" aria-label="Related resources">
+          {% for resource in resources %}
+            {% if resource.url contains '://' %}
+              <a href="{{ resource.url }}">[{{ resource.label }} ↗]</a>
+            {% else %}
+              <a href="{{ resource.url | relative_url }}">[{{ resource.label }} →]</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </article>
+{% endfor %}
+</div>

@@ -6,3 +6,4 @@ inline: true
 
 A paper got accepted at <a href='https://icml.cc'>ICML 2025</a>.
 
+- Global Context-aware Representation Learning for Spatially Resolved Transcriptomics
