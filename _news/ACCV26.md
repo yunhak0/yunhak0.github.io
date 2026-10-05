@@ -2,6 +2,7 @@
 layout: post
 date: 2026-08-17 00:00:00-0400
 inline: true
+news_summary: "Serving on the organizing committee for [MM4SciReal](https://mm4scireal.github.io/) at [ACCV 2026](https://accv2026.org/)."
 ---
 
 Serving on the organizing committee for <a href='https://mm4scireal.github.io/'>MM4SciReal: Multimodal AI for Science and the Real World</a> at <a href='https://accv2026.org/'>ACCV 2026</a>.

@@ -1,0 +1,28 @@
+---
+---
+<article class="paper" id="{{ entry.key }}">
+  {% assign venue_label = entry.abbr | replace: '<br>', ' ' | strip_html %}
+  <div class="paper-meta"><span class="paper-year">{{ entry.year }}</span><div class="paper-venue-group"><span class="paper-venue">{{ venue_label | remove: '(short)' | remove: '(Oral)' | remove: '(Spotlight)' | strip }}</span>{% if venue_label contains '(short)' %}<span class="paper-workshop">Short</span>{% endif %}{% if venue_label contains '(Oral)' %}<span class="paper-workshop paper-oral">Oral</span>{% endif %}{% if venue_label contains '(Spotlight)' %}<span class="paper-workshop paper-spotlight">Spotlight</span>{% endif %}{% if entry.workshop_short %}<span class="paper-workshop">{{ entry.workshop_short }}</span>{% endif %}</div></div>
+  <div class="paper-main">
+    <div class="paper-heading"><h3><button class="paper-toggle" id="{{ entry.key }}-toggle" type="button" data-paper-toggle aria-expanded="false" aria-controls="{{ entry.key }}-summary"><span>{{ entry.title }}</span><span class="paper-toggle-icon" aria-hidden="true"></span></button></h3></div>
+    <div class="paper-authors-block" data-authors-block>
+      <p class="paper-authors" id="{{ entry.key }}-authors">{% for author in entry.author_array %}{% assign author_name = author.first | append: ' ' | append: author.last %}{% if author.first == 'Yunhak' or author.first == 'Younhak' %}<strong>{{ author_name }}</strong>{% else %}{{ author_name }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+      <div class="authors-controls"><span class="authors-current-name" hidden></span><button class="authors-toggle" type="button" data-authors-toggle aria-expanded="false" aria-controls="{{ entry.key }}-authors" hidden>All authors +</button></div>
+    </div>
+    {% assign paper_summary = site.data.editorial_paper_summaries[entry.key] %}
+    <div class="paper-summary" id="{{ entry.key }}-summary" aria-labelledby="{{ entry.key }}-toggle" hidden>
+      <dl>
+        <div><dt>Motivation:</dt> <dd>{{ paper_summary.motivation | escape }}</dd></div>
+        <div><dt>Problem framing:</dt> <dd>{{ paper_summary.problem_framing | escape }}</dd></div>
+        <div><dt>Technical solution &amp; novelty:</dt> <dd>{{ paper_summary.technical_solution | escape }}</dd></div>
+        <div><dt>Insights:</dt> <dd>{{ paper_summary.insights | escape }}</dd></div>
+      </dl>
+    </div>
+    <div class="paper-links">
+      {% if entry.pdf %}{% if entry.pdf contains '://' %}{% assign pdf_url = entry.pdf %}{% else %}{% assign pdf_url = entry.pdf | prepend: '/assets/pdf/' | relative_url %}{% endif %}<a class="paper-link-primary" href="{{ pdf_url }}">[PDF ↗]</a>{% elsif entry.html %}<a class="paper-link-primary" href="{{ entry.html }}">[Paper ↗]</a>{% elsif entry.url %}<a class="paper-link-primary" href="{{ entry.url }}">[Paper ↗]</a>{% endif %}
+      {% if entry.code %}<a href="{{ entry.code }}">[Code ↗]</a>{% endif %}
+      {% if entry.slides %}{% if entry.slides contains '://' %}{% assign slides_url = entry.slides %}{% else %}{% assign slides_url = entry.slides | prepend: '/assets/pdf/' | relative_url %}{% endif %}<a href="{{ slides_url }}">[Slides ↗]</a>{% endif %}
+      {% if entry.author contains '*' %}<span class="contribution">* Equal contribution</span>{% endif %}
+    </div>
+  </div>
+</article>

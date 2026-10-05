@@ -1,0 +1,31 @@
+NeurIPS26:
+  - label: scTrilemma
+    url: https://arxiv.org/abs/2609.38840v2
+  - label: STRATA
+    url: https://www.biorxiv.org/content/early/2026/07/08/2026.07.08.737142
+ICML26:
+  - label: AdaPert
+    url: https://arxiv.org/abs/2602.18885
+  - label: PBio-Agent
+    url: https://arxiv.org/abs/2602.07408
+NeurIPS25:
+  - label: 3DMRL
+    url: https://arxiv.org/abs/2412.02957
+KDD25:
+  - label: GOODIE
+    url: https://arxiv.org/abs/2508.01209
+ICML25:
+  - label: Spotscape
+    url: https://arxiv.org/abs/2506.15698
+ICLR25:
+  - label: FedLoG
+    url: https://openreview.net/forum?id=cH65nS5sOz
+KDD24:
+  - label: FedLoG
+    url: https://openreview.net/forum?id=cH65nS5sOz
+CIKM23:
+  - label: MUSE
+    url: https://arxiv.org/abs/2308.09649
+SIGIR22:
+  - label: GraFN
+    url: https://arxiv.org/abs/2204.01303

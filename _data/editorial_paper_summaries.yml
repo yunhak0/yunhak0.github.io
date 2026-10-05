@@ -1,0 +1,71 @@
+oh2014using:
+  motivation: "Team-level and career statistics overlook game-specific lineups and recent player performance."
+  problem_framing: "We frame win–loss prediction as a matchup comparison using starting lineups and pre-game cumulative statistics."
+  technical_solution: "We aggregate starting-player statistics and encode team-to-team ratios and binary comparisons to model relative strength."
+  insights: "Effective prediction depends on representing matchup-specific advantages, beyond absolute team statistics."
+
+kim2016discovering:
+  motivation: "Conventional skin typing uses isolated measurements and fixed thresholds, overlooking relationships among skin characteristics."
+  problem_framing: "We frame skin typing as discovering multivariate skin profiles and explaining their associations with lifestyle and skincare habits."
+  technical_solution: "We use GMM to discover skin profiles from measurements, then derive decision-tree rules linking each profile to lifestyle and skincare habits."
+  insights: "Linking measurement-derived profiles to behavioral data makes associations between biological traits and everyday habits easier to interpret."
+
+grafn:
+  motivation: "With few labels, supervised GNNs struggle to propagate supervision, while self-supervised methods lack class-level guidance."
+  problem_framing: "We study how a few labeled nodes can guide class-discriminative node representation learning across the graph."
+  technical_solution: "We assign class distributions non-parametrically via anchor–support similarity and jointly enforce confidence-based label-guided consistency and node-wise consistency."
+  insights: "Similarity-based supervision can carry label information to distant and low-degree nodes, complementing neighborhood aggregation."
+
+muse:
+  motivation: "Existing session-based recommenders struggle with the high rate of unique transitions in shuffle-play sessions."
+  problem_framing: "We study how to learn user preferences from irregular track transitions for next-track recommendation across shuffle and non-shuffle sessions."
+  technical_solution: "We enrich rare transitions by inserting tracks with frequent connections to both adjacent tracks, then align identical and similar track representations across original and augmented sessions for robustness to context changes."
+  insights: "Shared track relationships can bridge differences in session structure, enabling consistent preference representations even in shuffle-play mode."
+
+fedlog:
+  motivation: "Local overfitting limits existing subgraph-FL methods’ ability to generalize to tail and missing classes and unfamiliar graph structures."
+  problem_framing: "We study how to compensate for locally absent knowledge so that client models generalize to unseen nodes, missing classes, and new clients after local updates."
+  technical_solution: "We condense head-degree knowledge into synthetic nodes, aggregate them according to class headness, and adapt them to local class bias and graph context through feature scaling and prompt generation."
+  insights: "Cross-client knowledge varies in reliability across classes and graph structures; generalizing to tail and missing classes requires considering both class and degree headness when transferring knowledge."
+
+spotscape:
+  motivation: "Spatially continuous expression makes local neighbor information redundant, while batch effects favor within-slice similarities, hindering domain identification and multi-slice integration."
+  problem_framing: "We study how global spot relationships can distinguish locally similar spots and support comparable representations across slices."
+  technical_solution: "We directly enforce augmentation-consistent similarities across all spot pairs to overcome limited local information, and match within- and across-slice similarity scales to reduce slice bias."
+  insights: "High similarity driven by spatial proximity or shared slice membership can obscure biological relationships; global similarity patterns on comparable scales help reveal domain structure within continuous expression landscapes and biological correspondences across slices."
+
+oldiebutgoodie:
+  motivation: "With severe feature missingness, imputation-based GNNs can underperform structure-based methods, while structure-only methods cannot fully benefit from increasingly available features."
+  problem_framing: "We study how to adapt the contributions of structural and feature information across settings ranging from nearly absent to fully observed features."
+  technical_solution: "We adaptively fuse trainable representations from Label Propagation (LP) and Feature Propagation (FP), and extend supervision by weighting positive pairs in contrastive learning according to label source and pseudo-label confidence."
+  insights: "Label propagation can support both prediction and supervision when features are scarce; effective learning under missingness benefits from separately accounting for feature utility and propagated-label reliability."
+
+lee20243D:
+  motivation: "Existing 2D molecular relational models overlook relative molecular positions and orientations, while accurately computing 3D interaction environments is costly."
+  problem_framing: "We study how interaction environments constructed from individual 3D structures can teach global and local geometry to models that use only 2D graphs downstream."
+  technical_solution: "We construct inexpensive one-to-many virtual environments inspired by explicit solvent models, injecting interaction geometry into 2D molecular pair representations through global contrastive alignment and local relative direction prediction."
+  insights: "Transfer to molecular relational tasks benefits from geometry supervision that captures how molecules coexist; even approximate virtual environments can provide useful interaction priors by jointly capturing global arrangements and local directionality."
+
+kim2026progressive:
+  motivation: "Independent gene-level predictions overlook how clearer responses to the same perturbation can inform complex regulatory and feedback relationships."
+  problem_framing: "Within each cell–perturbation context, we frame gene responses as connected reasoning tasks that can be progressively resolved from easier to harder cases."
+  technical_solution: "PBio-Agent performs inference-time progressive reasoning, ordering genes by prediction self-consistency and biological relevance and passing expert-generated, judge-reviewed predictions and reasoning to harder targets as reusable context."
+  insights: "Difficult gene responses can become clearer as shared regulatory context accumulates, suggesting that biological reasoning difficulty depends on which responses are inferred first and what context they establish."
+
+piao2026learning:
+  motivation: "Reconstruction objectives dominated by non-responsive genes encourage mean collapse, yielding high overall correlation while shrinking perturbation-specific effects; dense, shared knowledge graphs further propagate irrelevant signals and noise."
+  problem_framing: "We frame unseen genetic perturbation prediction as recovering sparse expression changes by selecting relevant biological context and separating true responses from background variation."
+  technical_solution: "AdaPert combines external interaction knowledge with gene descriptions to differentiably select sparse, perturbation-specific subgraphs, aligning their representations with DEG responses while suppressing spurious non-DEG changes."
+  insights: "High overall expression correlation does not guarantee recovery of sparse perturbation effects; selecting relevant context, preserving responsive-gene changes, and constraining non-responsive variation help distinguish true effects from noise."
+
+lee2026screening:
+  motivation: "Predictive models are needed to explore the vast LNP formulation space, yet existing approaches inadequately capture component interactions shaped jointly by molecular structures and formulation ratios."
+  problem_framing: "We frame prediction for unseen molecules and ratios as learning component interactions jointly determined by molecular structures and relative composition."
+  technical_solution: "STRATA adapts RoPE to encode relative component ratios in attention, aligning component-level representations so molecular embeddings reflect formulation context and interaction embeddings remain grounded in molecular structure."
+  insights: "Effective LNP screening asks which lipids work well together and at what relative ratios, highlighting that a lipid’s contribution depends on both its molecular structure and formulation context."
+
+oh2026sctrilemma:
+  motivation: "In label-free single-cell learning, the same expression variation can represent biology or nuisance depending on the analysis, making it difficult for one embedding to preserve identity and state, remain context-invariant, and retain expression fidelity."
+  problem_framing: "We frame this representation trilemma as an information-routing problem: which expression-derived signals should define cellular similarity, provide context, or remain available for gene-level prediction?"
+  technical_solution: "scTrilemma uses expression to gate gene features, directly couples the cell embedding to reconstruction, retains expression detail in latent tokens, and conditions the prior on group context, jointly addressing the three demands without auxiliary representation losses."
+  insights: "Tensions among identity, invariance, and fidelity partly arise from forcing information with different roles into one embedding; distinguishing the pathways for cellular comparison and expression prediction can ease these trade-offs."

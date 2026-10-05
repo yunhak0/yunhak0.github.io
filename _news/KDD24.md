@@ -6,3 +6,4 @@ inline: true
 
 A paper got accepted at <a href='https://fedkdd.github.io'>KDD 2024 Workshop on Federated Learning</a> <FONT COLOR="#FF0000">(Best Paper Award)</FONT>.
 
+- Subgraph Federated Learning for Local Generalization

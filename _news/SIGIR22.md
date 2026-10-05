@@ -6,3 +6,4 @@ inline: true
 
 A paper got accepted at SIGIR 2022.
 
+- GraFN: Semi-Supervised Node Classification on Graph with Few Labels via Non-Parametric Distribution Assignment
