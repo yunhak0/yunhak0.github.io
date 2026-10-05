@@ -2,6 +2,7 @@
 layout: editorial
 permalink: /publications/
 title: Research Archive
+description: Publications by Yunhak Oh on machine learning, cellular biology, and therapeutic discovery.
 editorial_tab: publications
 years: [2026, 2025, 2023, 2022, 2016, 2014]
 ---
@@ -14,4 +15,4 @@ years: [2026, 2025, 2023, 2022, 2016, 2014]
   {% for year in page.years %}{% bibliography -f papers -q @*[year={{ year }}] -T editorial-bib %}{% endfor %}
   <p class="empty-results" data-empty-results hidden>No publications match. Try another search or year.</p>
 </section>
-<script src="{{ '/assets/js/editorial.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/editorial.js' | asset_version | relative_url }}" defer></script>

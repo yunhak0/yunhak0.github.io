@@ -3,10 +3,13 @@ layout: editorial
 ---
 <div class="about-grid">
   <article class="about-column">
+    <h1 class="visually-hidden">About Yunhak Oh</h1>
     {% assign intro_paragraph = content | split: '</p>' | first | append: '</p>' %}
     {% assign current_research = content | remove_first: intro_paragraph | split: '</p>' | first | append: '</p>' %}
     <div class="about-intro">
-      <figure class="portrait"><img src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}" alt="Portrait of Yunhak Oh" width="184" height="230"></figure>
+      {% assign portrait_path = page.profile.image | prepend: '/assets/img/' %}
+      {% assign portrait_stem = portrait_path | remove: '.jpg' %}
+      <figure class="portrait"><picture><source type="image/webp" srcset="{{ portrait_stem | append: '-480.webp' | relative_url }} 480w, {{ portrait_stem | append: '-800.webp' | relative_url }} 800w" sizes="(max-width: 380px) 96px, (max-width: 680px) 104px, 184px"><img src="{{ portrait_path | relative_url }}" alt="Portrait of Yunhak Oh" width="184" height="230" decoding="async" fetchpriority="high"></picture></figure>
       <div class="about-intro-copy">
         <div class="about-prose intro-paragraph">{{ intro_paragraph }}{{ current_research }}</div>
       </div>
@@ -34,4 +37,4 @@ layout: editorial
   <p class="empty-results" data-empty-results hidden>No publications match. Try another search or year.</p>
   <div class="publication-reveal" data-publications-end hidden><button class="publication-reveal-button" type="button" data-expand-publications aria-controls="publication-list" aria-expanded="false" aria-label="Show all publications"><span>Scroll down for all publications</span><span class="publication-reveal-arrow" aria-hidden="true">↓</span></button></div>
 </section>
-<script src="{{ '/assets/js/editorial.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/editorial.js' | asset_version | relative_url }}" defer></script>

@@ -1,0 +1,12 @@
+{
+  "name": "yunhak-homepage-checks",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check:site": "node bin/check-site.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.11.1",
+    "playwright": "1.56.1"
+  }
+}

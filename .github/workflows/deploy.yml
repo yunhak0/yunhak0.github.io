@@ -33,6 +33,17 @@ jobs:
           PAGES_REPO_NWO: ${{ github.repository }}
           JEKYLL_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: bundle exec jekyll build --trace
+      - name: Set up site checks
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install check dependencies
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+      - name: Check links, metadata, and accessibility
+        run: npm run check:site
       - name: Upload GitHub Pages artifact
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v4
