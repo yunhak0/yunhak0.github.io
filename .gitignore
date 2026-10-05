@@ -7,3 +7,6 @@ _site
 .ruby-version
 .tweet-cache
 vendor
+node_modules
+test-results
+playwright-report

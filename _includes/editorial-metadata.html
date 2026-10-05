@@ -1,0 +1,40 @@
+{% capture editorial_title %}{% unless page.editorial_tab == 'about' %}{{ page.title }} — {% endunless %}Yunhak Oh{% endcapture %}
+{% assign editorial_description = page.description | default: site.description | strip_html | strip %}
+{% assign editorial_image = page.og_image | default: site.og_image | absolute_url %}
+<title>{{ editorial_title | strip | escape }}</title>
+<meta name="description" content="{{ editorial_description | escape }}">
+<meta name="author" content="Yunhak Oh">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+{% if site.serve_og_meta %}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Yunhak Oh">
+<meta property="og:title" content="{{ editorial_title | strip | escape }}">
+<meta property="og:description" content="{{ editorial_description | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ editorial_image }}">
+<meta property="og:image:alt" content="Portrait of Yunhak Oh">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ editorial_title | strip | escape }}">
+<meta name="twitter:description" content="{{ editorial_description | escape }}">
+<meta name="twitter:image" content="{{ editorial_image }}">
+<meta name="twitter:image:alt" content="Portrait of Yunhak Oh">
+{% endif %}
+{% if site.serve_schema_org and page.editorial_tab == 'about' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Yunhak Oh",
+  "url": {{ '/' | absolute_url | jsonify }},
+  "image": {{ editorial_image | jsonify }},
+  "description": {{ editorial_description | jsonify }},
+  "jobTitle": "Ph.D. candidate",
+  "affiliation": { "@type": "CollegeOrUniversity", "name": "KAIST" },
+  "sameAs": [
+    "https://scholar.google.com/citations?user={{ site.scholar_userid }}",
+    "https://github.com/{{ site.github_username }}",
+    "https://www.linkedin.com/in/{{ site.linkedin_username }}"
+  ]
+}
+</script>
+{% endif %}

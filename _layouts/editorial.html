@@ -3,12 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% unless page.editorial_tab == 'about' %}{{ page.title }} — {% endunless %}Yunhak Oh</title>
-  <meta name="description" content="Yunhak Oh — Ph.D. candidate in Data Science at KAIST. Machine learning, graph representation learning, and AI for science.">
-  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  {% include editorial-metadata.html %}
   <link rel="icon" href="{{ '/assets/img/scientist.ico' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/editorial.css' | relative_url }}">
-  {% if page.editorial_tab == 'cv' %}<link rel="stylesheet" href="{{ '/assets/css/editorial-pdf.css' | relative_url }}">{% endif %}
+  <link rel="stylesheet" href="{{ '/assets/css/editorial.css' | asset_version | relative_url }}">
+  {% if page.editorial_tab == 'cv' %}<link rel="stylesheet" href="{{ '/assets/css/editorial-pdf.css' | asset_version | relative_url }}">{% endif %}
 </head>
 <body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
