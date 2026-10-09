@@ -61,6 +61,17 @@ for (const path of htmlFiles) {
 }
 console.log(`Checked internal links and resources in ${htmlFiles.length} HTML pages`);
 
+// The historic PDF URL must survive even though no current page links to it.
+try {
+  const cvPage = await readFile(await routeFile('/cv/'), 'utf8');
+  const currentUrl = cvPage.match(/data-pdf-url="([^"]+)"/)[1];
+  const current = await readFile(await routeFile(new URL(currentUrl, siteOrigin).pathname));
+  const historic = await readFile(await routeFile('/assets/pdf/CV_YunhakOh.pdf'));
+  if (!historic.equals(current)) throw new Error('Historic URL does not contain the current CV');
+} catch (error) {
+  failures.push(`Historic CV URL: ${error.message}`);
+}
+
 const mime = { '.html':'text/html', '.css':'text/css', '.js':'text/javascript', '.mjs':'text/javascript', '.svg':'image/svg+xml', '.jpg':'image/jpeg', '.webp':'image/webp', '.png':'image/png', '.pdf':'application/pdf', '.ttf':'font/ttf' };
 const server = createServer(async (request, response) => {
   try {
